@@ -8,12 +8,13 @@
 #import "JTCalendarDayView.h"
 
 #import "JTCircleView.h"
+#import "JTPoopView.h"
 
 @interface JTCalendarDayView (){
     UIView *backgroundView;
     JTCircleView *circleView;
     UILabel *textLabel;
-    JTCircleView *dotView;
+    JTPoopView *dotView;
     
     BOOL isSelected;
     
@@ -76,7 +77,7 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
     }
     
     {
-        dotView = [JTCircleView new];
+        dotView = [JTPoopView new];
         [self addSubview:dotView];
         dotView.hidden = YES;
     }
@@ -198,12 +199,12 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         if(!self.isOtherMonth){
             circleView.color = [self.calendarManager.calendarAppearance dayCircleColorSelected];
             textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelected];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelected];
+//            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelected];
         }
         else{
             circleView.color = [self.calendarManager.calendarAppearance dayCircleColorSelectedOtherMonth];
             textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorSelectedOtherMonth];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelectedOtherMonth];
+//            dotView.color = [self.calendarManager.calendarAppearance dayDotColorSelectedOtherMonth];
         }
         
         circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
@@ -213,22 +214,22 @@ static NSString *const kJTCalendarDaySelected = @"kJTCalendarDaySelected";
         if(!self.isOtherMonth){
             circleView.color = [self.calendarManager.calendarAppearance dayCircleColorToday];
             textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorToday];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorToday];
+//            dotView.color = [self.calendarManager.calendarAppearance dayDotColorToday];
         }
         else{
             circleView.color = [self.calendarManager.calendarAppearance dayCircleColorTodayOtherMonth];
             textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorTodayOtherMonth];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorTodayOtherMonth];
+//            dotView.color = [self.calendarManager.calendarAppearance dayDotColorTodayOtherMonth];
         }
     }
     else{
         if(!self.isOtherMonth){
             textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColor];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColor];
+//            dotView.color = [self.calendarManager.calendarAppearance dayDotColor];
         }
         else{
             textLabel.textColor = [self.calendarManager.calendarAppearance dayTextColorOtherMonth];
-            dotView.color = [self.calendarManager.calendarAppearance dayDotColorOtherMonth];
+//            dotView.color = [self.calendarManager.calendarAppearance dayDotColorOtherMonth];
         }
         
         opacity = 0.;
